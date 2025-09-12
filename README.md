@@ -18,4 +18,4 @@ It’s designed for beginners and learners who want to understand how OOP concep
 ## 🛠️ How to Use
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/your-repo-name.git
+   git clone https://github.com/devKOff/OOP_JAVA.git
