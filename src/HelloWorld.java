@@ -1,23 +1,16 @@
-class Car {
-    // Attributes (fields)
-    String model;
-    int year;
-
-    // Method
-    void drive() {
-        System.out.println(model + " is driving!");
-    }
-}
-
-
-public class Main {
+// This is the class declaration. In Java, all code must be inside a class.
+// The class name 'HelloWorld' must match the file name (HelloWorld.java).
+// 'public' means this class is accessible from anywhere.
+public class HelloWorld {
+    // The main method is the entry point of a Java program.
+    // 'public' makes it accessible to the Java runtime.
+    // 'static' means it can be called without creating an instance of the class.
+    // 'void' indicates it does not return any value.
+    // 'String[] args' is an array of String arguments passed from the command line.
     public static void main(String[] args) {
-        // Creating objects of the Car class
-        Car myCar = new Car();
-        myCar.model = "Toyota";  // Set attribute
-        myCar.year = 2020;       // Set attribute
-        myCar.drive();           // Call method, outputs: Toyota is driving!
-
-
+        // System.out is a standard output stream object used to print to the console.
+        // println() is a method that prints the given text and adds a new line.
+        // The string "Hello, World!" is the text to be printed.
+        System.out.println("Hello, World!");
     }
 }
