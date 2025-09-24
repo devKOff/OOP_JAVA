@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 class Account {
     private double bal = 10000;
     boolean checkAmount(double amt) {
@@ -7,36 +6,32 @@ class Account {
             return true;
         }
         else {
-            return  false ;
+            return false;
         }
     }
 
     public double withdraw(double amt) {
-        bal = bal-amt;
-    return bal;
+        bal = bal - amt;
+        return bal;
     }
 }
 
-
 class Customer extends Thread {
     Account ac;
-    Customer(Account ac){
-
+    Customer(Account ac) {
         this.ac = ac;
     }
     public void run() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter amount to withdraw:");
         double amt = sc.nextDouble();
-        if(ac.checkAmount(amt)){
-            System.out.println("Enter amount to withdraw:"+ac.withdraw(amt));
-        }
-        else{
-            System.out.println("Insufficient Balance"+ac.withdraw(amt));
+        if (ac.checkAmount(amt)) {
+            System.out.println("Remaining Balance: " + ac.withdraw(amt));
+        } else {
+            System.out.println("Insufficient Balance");
         }
     }
 }
-
 
 public class account2 {
     public static void main(String[] args) {
@@ -45,7 +40,5 @@ public class account2 {
         Customer c2 = new Customer(ac);
         c1.start();
         c2.start();
-
-
     }
 }
