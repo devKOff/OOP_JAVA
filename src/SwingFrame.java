@@ -1,9 +1,10 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 class SwingFormSetBounds {
     public static void main(String[] args) {
-
         JFrame jf = new JFrame("Student Marks Form");
         jf.setLayout(null);
 
@@ -12,26 +13,28 @@ class SwingFormSetBounds {
 
         JLabel l2 = new JLabel("Enter five subject marks:");
 
-        JLabel l3 = new JLabel("C :");
+        JLabel l3 = new JLabel("C:");
         JTextField t2 = new JTextField();
 
-        JLabel l4 = new JLabel("Python :");
+        JLabel l4 = new JLabel("Python:");
         JTextField t3 = new JTextField();
 
-        JLabel l5 = new JLabel("Advanced Python :");
+        JLabel l5 = new JLabel("Advanced Python:");
         JTextField t4 = new JTextField();
 
-        JLabel l6 = new JLabel("JAVA :");
+        JLabel l6 = new JLabel("JAVA:");
         JTextField t5 = new JTextField();
 
-        JLabel l7 = new JLabel("C++ :");
+        JLabel l7 = new JLabel("C++:");
         JTextField t6 = new JTextField();
 
-        JLabel l8 = new JLabel("Average of marks are :");
+        JLabel l8 = new JLabel("Average of marks:");
         JTextField t7 = new JTextField();
+        t7.setEditable(false); // Make average field read-only
 
-        JButton b1 = new JButton("Total Marks ");
+        JButton b1 = new JButton("Calculate Total & Average");
 
+        // Set bounds for components
         l1.setBounds(30, 20, 120, 25);
         t1.setBounds(160, 20, 200, 25);
 
@@ -52,11 +55,12 @@ class SwingFormSetBounds {
         l7.setBounds(30, 210, 120, 25);
         t6.setBounds(160, 210, 200, 25);
 
-        b1.setBounds(200, 240, 120, 25);
+        b1.setBounds(200, 240, 160, 25);
 
         l8.setBounds(30, 270, 120, 25);
         t7.setBounds(160, 270, 200, 25);
 
+        // Add components to frame
         jf.add(l1);
         jf.add(t1);
         jf.add(l2);
@@ -74,9 +78,42 @@ class SwingFormSetBounds {
         jf.add(t7);
         jf.add(b1);
 
+        // Add action listener to button
+        b1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    // Get name (no parsing needed, it's a string)
+                    String name = t1.getText().trim();
+
+                    // Parse marks from text fields
+                    int cMarks = Integer.parseInt(t2.getText().trim());
+                    int pythonMarks = Integer.parseInt(t3.getText().trim());
+                    int advPythonMarks = Integer.parseInt(t4.getText().trim());
+                    int javaMarks = Integer.parseInt(t5.getText().trim());
+                    int cppMarks = Integer.parseInt(t6.getText().trim());
+
+                    int total = cMarks + pythonMarks + advPythonMarks + javaMarks + cppMarks;
+                    double average = total / 5.0;
+
+                    t7.setText(String.format("%.2f", average));
+
+                    JOptionPane.showMessageDialog(jf,
+                            "Student: " + name + "\nTotal Marks: " + total + "\nAverage Marks: " + String.format("%.2f", average),
+                            "Results",
+                            JOptionPane.INFORMATION_MESSAGE);
+                } catch (NumberFormatException ex) {
+
+                    JOptionPane.showMessageDialog(jf,
+                            "Please enter valid numbers for all subject marks!",
+                            "Input Error",
+                            JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        });
 
         jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        jf.setSize(420, 400);
+        jf.setSize(400, 400);
         jf.setVisible(true);
     }
 }
