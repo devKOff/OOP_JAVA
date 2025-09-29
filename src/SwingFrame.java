@@ -1,21 +1,22 @@
 import javax.swing.*;
+import java.awt.*;
 
-class SwingFrame{
+class SwingFrame {
     public static void main(String[] args) {
-        JFrame jf = new JFrame();
-        jf.setVisible(true);
-        jf.setSize(400,400);
-        jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JLabel l1=new JLabel("Hello World");
-        JTextField t1 =  new JTextField();
-        JButton b1 = new JButton("Click");
 
+        JFrame jf = new JFrame("Enter");
+        jf.setLayout(new FlowLayout());
+
+
+        JLabel l1 = new JLabel("Enter your name :");
+        JButton b1 = new JButton("Click");
+        JTextField t1 = new JTextField(15);
         jf.add(l1);
         jf.add(t1);
         jf.add(b1);
 
+        jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        jf.setSize(400, 300);
+        jf.setVisible(true);
     }
 }
-
-
-
