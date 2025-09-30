@@ -79,7 +79,7 @@ class SwingFormSetBounds {
         jf.add(b1);
 
         // Add action listener to button
-        b1.addActionListener(new ActionListener() {
+       /* b1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
@@ -111,7 +111,7 @@ class SwingFormSetBounds {
                 }
             }
         });
-
+*/
         jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jf.setSize(400, 400);
         jf.setVisible(true);
