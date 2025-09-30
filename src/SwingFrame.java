@@ -77,41 +77,6 @@ class SwingFormSetBounds {
         jf.add(l8);
         jf.add(t7);
         jf.add(b1);
-
-        // Add action listener to button
-       /* b1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    // Get name (no parsing needed, it's a string)
-                    String name = t1.getText().trim();
-
-                    // Parse marks from text fields
-                    int cMarks = Integer.parseInt(t2.getText().trim());
-                    int pythonMarks = Integer.parseInt(t3.getText().trim());
-                    int advPythonMarks = Integer.parseInt(t4.getText().trim());
-                    int javaMarks = Integer.parseInt(t5.getText().trim());
-                    int cppMarks = Integer.parseInt(t6.getText().trim());
-
-                    int total = cMarks + pythonMarks + advPythonMarks + javaMarks + cppMarks;
-                    double average = total / 5.0;
-
-                    t7.setText(String.format("%.2f", average));
-
-                    JOptionPane.showMessageDialog(jf,
-                            "Student: " + name + "\nTotal Marks: " + total + "\nAverage Marks: " + String.format("%.2f", average),
-                            "Results",
-                            JOptionPane.INFORMATION_MESSAGE);
-                } catch (NumberFormatException ex) {
-
-                    JOptionPane.showMessageDialog(jf,
-                            "Please enter valid numbers for all subject marks!",
-                            "Input Error",
-                            JOptionPane.ERROR_MESSAGE);
-                }
-            }
-        });
-*/
         jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jf.setSize(400, 400);
         jf.setVisible(true);
