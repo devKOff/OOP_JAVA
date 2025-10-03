@@ -12,7 +12,7 @@ class Gen3<G extends Number> {
     }
 
     public static void main(String[] args) throws Exception {
-        Gen3<Integer> g = new Gen3<>(29.3,13.2);
+        Gen3<Double> g = new Gen3<Double>(29.3,13.2);
         System.out.println(g.Add());
     }
 }
