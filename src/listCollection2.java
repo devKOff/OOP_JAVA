@@ -18,14 +18,14 @@
 
 import java.util.*;  // Import for LinkedList, Iterator, and other utilities from java.util package
 
-class Employee {  // Custom class to represent employee information (encapsulates data and behavior)
+class Employee1 {  // Custom class to represent employee information (encapsulates data and behavior)
     String name;  // Field for employee's name (String type for text data)
     int age;      // Field for employee's age (int for whole numbers)
     double salary; // Field for employee's salary (double for decimal values like 50000.50)
 
     // Constructor: Special method to initialize object fields when creating a new instance
     // 'this' keyword refers to the current object to distinguish from parameters
-    Employee(String n, int a, double sal) {
+    Employee1(String n, int a, double sal) {
         this.name = n;     // Assign parameter to instance variable
         this.age = a;      // Meaning: Sets the age value for this employee object
         this.salary = sal; // Meaning: Sets the salary value, allowing for floating-point precision
@@ -41,9 +41,9 @@ class Employee {  // Custom class to represent employee information (encapsulate
 public class listCollection2 {  // Main class containing the program's entry point (main method)
     public static void main(String[] args) {  // static: Belongs to class, not instance; main is the JVM's starting point
         // Create three Employee objects (instantiation using 'new' keyword)
-        Employee e1 = new Employee("Rajiv", 34, 75000.00);  // Object 1: Senior employee
-        Employee e2 = new Employee("Dev", 20, 45000.00);    // Object 2: Junior developer
-        Employee e3 = new Employee("Alice", 28, 60000.00);  // Object 3: Mid-level manager
+        Employee e1 = new Employee1("Rajiv", 34, 75000.00);  // Object 1: Senior employee
+        Employee e2 = new Employee1("Dev", 20, 45000.00);    // Object 2: Junior developer
+        Employee e3 = new Employee1("Alice", 28, 60000.00);  // Object 3: Mid-level manager
 
         // Declare and initialize a LinkedList to hold Employee objects
         // Meaning: LinkedList is resizable; grows/shrinks dynamically unlike fixed-size arrays
